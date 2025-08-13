@@ -15,7 +15,8 @@ print("There are ten kinds of fonts following you can transform:\n==============
 for i in alphabet:
     print(f"{i[0]}\n{i[1]}\n=========================================================")
 
-transformType = list(input("Select two indexes before the font name,your first number indicates your font of your original string,\nsecond one means the font you tend to transform to(you can type those two number like 02 ):"))
+transformType = list(input("Select two indexes before the font name,your first number indicates your font of your original string,\nsecond one means the font you tend to transform to(you can type those two number like 0,2 ):"))
+transformType = transformType.split(",")
 A = list(alphabet[int(transformType[0])][1])
 B = list(alphabet[int(transformType[1])][1])
 for i in range(52):
@@ -25,3 +26,4 @@ for i in range(len(originList)):
     if originList[i] in transformObject:
         originList[i] = transformObject[originList[i]]
 print("=========================================================\n","".join(originList))
+
